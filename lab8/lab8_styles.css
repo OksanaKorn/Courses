@@ -1,0 +1,229 @@
+.outer {
+  max-width: 1580px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.container {
+  width: 150px;
+  pointer-events: none;
+  padding: 50px;
+  position: relative;
+  -webkit-perspective: 500;
+}
+
+.bg5 {
+  z-index: 3;
+}
+
+.bg6 {
+  z-index: 2;
+}
+
+.bg7 {
+  z-index: 1;
+}
+
+
+.inside_left {
+  overflow: hidden;
+  top: 20px;
+  transform-style: preserve-3d;
+  transform: rotateY(45deg);
+  background-size: 100% auto;
+  height: 235px;
+  width: 345px;
+  transition: 1s, background-position 15s;
+  position: relative;
+  pointer-events: auto;
+}
+
+.center {
+  overflow: hidden;
+  top: 20px;
+  box-sizing: border-box;
+  background-size: 100% auto;
+  height: 235px;
+  width: 345px;
+  position: relative;
+  pointer-events: auto;
+  transition: 1.4s;
+}
+
+.inside_right {
+  overflow: hidden;
+  top: 20px;
+  transform-style: preserve-3d;
+  transform: rotateY(-45deg);
+  background-size: 100% auto;
+  height: 235px;
+  width: 345px;
+  transition: 1s, background-position 15s;
+  position: relative;
+  pointer-events: auto;
+}
+
+.container:hover .inside_left  {
+  transform: rotateX(0deg) rotateY(20deg);
+  position: relative;
+  box-shadow: 0px 0 15px 2px #F4D03F;
+}
+
+.container:hover .center {
+  box-shadow: 0px 0 15px 2px #F4D03F;
+}
+
+.container:hover .inside_right {
+  transform: rotateX(0deg) rotateY(-20deg);
+  position: relative;
+  box-shadow: 0px 0 15px 2px #F4D03F;
+}
+
+.bg1 .inside_left {
+  background-image: url('https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--363527_12.jpg?itok=4_lHSYv3');
+}
+
+.bg2 .inside_left {
+  background-image: url('https://www.howtocookthat.net/public_html/wp-content/uploads/2015/09/IMG_9495-550x413.jpg?x19907');
+}
+
+.bg3 .inside_left {
+  background-image: url('https://www.seriouseats.com/2018/04/20180411-chiffon-cake-vicky-wasik-25b.jpg');
+}
+
+.bg4 .center {
+  background-image: url('https://www.handletheheat.com/wp-content/uploads/2015/02/Chocolate-Raspberry-Cupcakes-square.jpg');
+}
+
+.bg5 .inside_right {
+  background-image: url('https://imagesvc.timeincapp.com/v3/mm/image?url=http%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2Fimage%2F2016%2F09%2Fmain%2F1610p128-lemony-white-bean-arugula-salad.jpg%3Fitok%3DsEi89OAU&w=800&q=85');
+}
+
+.bg6 .inside_right {
+  background-image: url('http://nancyscravings.com/wp-content/uploads/2015/03/Pulled-Pork-Burger-4.jpg');
+}
+
+.bg7 .inside_right {
+  background-image: url('https://food.fnr.sndimg.com/content/dam/images/food/fullset/2013/5/2/1/FNM_060113-Roasted-Vegetable-Pasta-Recipe_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371616332575.jpeg');
+}
+
+input {
+  display: none;
+}
+
+label {
+  width: 12%;
+}
+
+#first:checked ~ .wrapper > label > .bg1 > .inside_left,
+#second:checked ~ .wrapper > label > .bg2 > .inside_left,
+#third:checked ~ .wrapper > label > .bg3  > .inside_left,
+#fourth:checked ~ .wrapper > label > .bg4 > .center,
+#fifth:checked ~ .wrapper > label > .bg5 > .inside_right,
+#sixth:checked ~ .wrapper > label > .bg6 > .inside_right,
+#seventh:checked ~ .wrapper > label > .bg7 > .inside_right {
+  transform: rotateX(0deg) rotateY(0deg);
+}
+
+#first:checked ~ .wrapper > label > .bg4 > .center,
+#second:checked ~ .wrapper > label > .bg4 > .center,
+#third:checked ~ .wrapper > label > .bg4  > .center {
+  transform: rotateY(-45deg);
+  transition: 1.2s;
+}
+
+#first:checked ~ .wrapper > label > .bg3 > .inside_left,
+#second:checked ~ .wrapper > label > .bg3 > .inside_left {
+  transform: rotateY(-45deg);
+}
+
+#first:checked ~ .wrapper > label > .bg2 > .inside_left {
+  transform: rotateY(-45deg);
+}
+
+#third:checked ~ .wrapper > label > .bg4,
+#first:checked ~ .wrapper > label > .bg4,
+#second:checked ~ .wrapper > label > .bg4 {
+  z-index: 4;
+}
+
+#second:checked ~ .wrapper > label > .bg3,
+#first:checked ~ .wrapper > label > .bg3 {
+  z-index: 5;
+}
+
+#first:checked ~ .wrapper > label > .bg2 {
+  z-index: 6;
+}
+/*end to the right*/
+
+/*to the left*/
+#fifth:checked ~ .wrapper > label > .bg4 > .center,
+#sixth:checked ~ .wrapper > label > .bg4 > .center,
+#seventh:checked ~ .wrapper > label > .bg4 > .center {
+  transform: rotateY(45deg);
+}
+
+#sixth:checked ~ .wrapper > label > .bg5 > .inside_right,
+#seventh:checked ~ .wrapper > label > .bg5 > .inside_right {
+  transform: rotateY(45deg);
+}
+
+#seventh:checked ~ .wrapper > label > .bg6 > .inside_right {
+  transform: rotateY(45deg);
+}
+
+#seventh:checked ~ .wrapper > label > .bg6 {
+  z-index: 5
+}
+/*end to the right*/
+
+#first:checked ~ .wrapper {
+    width: 45%;
+    margin-left: 30%;
+    transition: 1.2s;
+}
+#second:checked ~ .wrapper {
+    width: 60%;
+    margin-left: 21%;
+    transition: 1.2s;
+}
+#third:checked ~ .wrapper {
+    margin-left: 9%;
+    transition: 1.2s;
+}
+
+#fifth:checked ~ .wrapper {
+    margin-left: -9%;
+    transition: 1.2s;
+}
+
+#sixth:checked ~ .wrapper {
+    width: 60%;
+    margin-left: -7%;
+    transition: 1.2s;
+}
+
+#seventh:checked ~ .wrapper {
+    margin-left: -3%;
+    transition: 1.2s;
+    width: 45%;
+}
+
+
+#first:checked ~ .wrapper > label > .bg1,
+#second:checked ~ .wrapper > label > .bg2,
+#third:checked ~ .wrapper > label > .bg3,
+#fourth:checked ~ .wrapper > label > .bg4,
+#sixth:checked ~ .wrapper > label > .bg6,
+#seventh:checked ~ .wrapper > label > .bg7{
+  z-index: 8;
+}

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Телефона книга</title>
+	<style type="text/css">
+		#myTable {
+			border: 1px solid black;
+			border-spacing: 20px;
+		}
+
+		.wrapper {
+			margin: 0 auto;
+			max-width: 800px;
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+
+		<h3>Телефона книга</h3>
+
+		<input type="text" name="name" id="contactName" placeholder="name">
+		<input type="text" name="phone" id="contactPhone" placeholder="phone">
+		<input type="text" name="email" id="contactEmail" placeholder="email">
+		<button onclick="phoneBook.add(document.getElementById('contactName').value, document.getElementById('contactPhone').value, document.getElementById('contactEmail').value);">Додати контакт</button>
+		<br><br>
+
+
+
+		<table id="myTable">
+
+		</table>
+		<br><br>
+
+		<p>Шукати/видалити контакт</p>
+		<input type="text" name="query" id="query">
+		<button onclick="phoneBook.find(document.getElementById('query').value)">Шукати</button>
+		<button onclick="phoneBook.remove(document.getElementById('query').value)">Видалити</button>
+
+		<br><br>
+		<div id="found"></div>
+
+	</div>
+	
+	<script type="text/javascript" src="phoneBook.js"></script>
+	<script type="text/javascript" src="lab11_phoneBook.js"></script>
+</body>
+</html>
+

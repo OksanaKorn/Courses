@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    font-size: 18px;
+  }
+
+  table {
+      border-collapse: collapse;
+      width: 100%;
+  }
+
+  td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+  }
+
+  tr:nth-child(odd) {
+      background-color: #dddddd !important;
+  }
+
+  table.filteredtable tr:hover td,
+  td:hover td[id="days"] {
+     background-color: #7FB3D5;
+  }
+
+/*  tr:hover > td:not(#days) {
+     background-color: transparent !important;
+  }
+*/
+/*  #days {
+    background-color: #7FB3D5;
+  }
+*/
+
+
+/*  #days {
+    background-color: #7FB3D5;
+  }*/
+
+  label {
+    padding-right: 10px;
+    padding-bottom: 10px;
+  }
+
+  input {
+    display: none;
+  }
+
+  form > input {
+    display: inline;
+  }
+
+  #firstHalf:checked ~ table tbody tr:not(.firstHalf) {
+    display: none;
+  }
+
+
+  #secondHalf:checked ~ table tbody tr:not(.secondHalf) {
+      display: none;
+  }
+
+  #weekdays:checked ~ table tbody tr:not(.weekdays) {
+    display: none;
+  }
+
+  #weekends:checked ~ table tbody tr:not(.weekends) {
+      display: none;
+  }
+
+  #head:checked ~ table tbody tr:not(.head) {
+    display: none;
+  }
+
+  #regularDoctor:checked ~ table tbody tr:not(.regularDoctor) {
+    display: none;
+  }
+  #candidate:checked ~ table tbody tr:not(.candidate) {
+      display: none;
+  }
+
+  tr.firstTr{
+    display: table-row !important; 
+  }
+  .submitButton {
+    display: none;
+  }
+
+  input.phone:valid ~ input.email:valid ~ .submitButton {
+    display: inline-block;
+  }
+
+
+  form {
+    padding-top: 30px;
+  }
+
+  label {
+    background-color: #D7DBDD;
+    border-radius: 15px;
+    padding: 5px 5px;
+  }
+
+  label:hover {
+    background-color: #3498DB;
+  }
+
+  input:checked + label {
+    background-color: #3498DB;
+  }
+
+  #specialization {
+    display: inline;
+    width: 18%;
+  }
+
+</style>
+</head>
+<body>
+  Оберіть час прийому:
+
+  <input class="tablefilter" type="radio" name="timeFilter" id="allDay" checked>
+  <label for="allDay">Весь день</label>
+  <input class="tablefilter" type="radio" name="timeFilter" id="firstHalf" >
+  <label for="firstHalf">08.00 - 12.00</label>
+  <input class="tablefilter" type="radio" name="timeFilter" id="secondHalf" >
+  <label for="secondHalf">13.00 - 17.00</label><br><br>
+
+  Оберіть період тижня:
+  <input class="tablefilter" type="radio" name="daysFilter" id="allWeek" checked>
+  <label for="allWeek">Весь тиждень</label>
+  <input class="tablefilter" type="radio" name="daysFilter" id="weekdays">
+  <label for="weekdays">Пн-Пт</label>
+  <input class="tablefilter" type="radio" name="daysFilter" id="weekends">
+  <label for="weekends">Сб, Нд</label><br><br>
+
+  Категорія лікаря:
+  <input class="tablefilter" type="radio" name="doctorsFilter" id="allDoctors" checked>
+  <label for="allDoctors">Всі лікарі</label>
+  <input class="tablefilter" type="radio" name="doctorsFilter" id="head" >
+  <label for="head">Головний лікар</label>
+  <input class="tablefilter" type="radio" name="doctorsFilter" id="regularDoctor" >
+  <label for="regularDoctor">Звичайний лікар</label>
+  <input class="tablefilter" type="radio" name="doctorsFilter" id="candidate" >
+  <label for="candidate">Кандидат медичних наук</label><br><br>
+
+
+  Пошук лікаря за спеціалізацією:
+  <input type="search" name="specialization" id="specialization" placeholder="Почніть вводити необхідну спеціалізацію" onkeyup="myFunction()">
+
+
+  <h2>Розклад роботи лікарів у поліклініці</h2>
+
+  <table class="filteredtable" id="myTable">
+    <tr class="firstTr">
+      <th>Спеціальність</th>
+      <th>ПІБ</th>
+      <th>Рівень фахівця</th>   
+      <th>Номер кабінету</th>
+      <th>Години прийому</th>
+      <th>Дні прийому</th>
+    </tr>
+    <tr class="head firstHalf weekdays">
+      <td class="specialization">Педіатр</td>
+      <td>Волошин Оксана Олександрівна</td>
+      <td class="head">Головний лікар</td>
+      <td>123</td>
+      <td id="days" class="firstHalf">08.00 - 12.00</td>
+      <td class="weekdays">Пн-Пт</td>
+    </tr>
+    <tr class="head secondHalf weekdays">
+    <td class="specialization">Невропатолог</td>
+      <td>Гнатишина Юлія Володдиморівна</td>
+      <td class="head">Головний лікар</td>
+      <td>346</td>
+      <td id="days" class="secondHalf">13.00 - 17.00</td>
+      <td class="weekdays">Пн-Пт</td>
+    </tr>
+    <tr class="candidate firstHalf weekends">
+      <td class="specialization">Отолаинголог</td>
+      <td>Яворська Олга Вікторівна</td>
+      <td class="candidate">Кандидат медичних наук</td>
+      <td>231</td>
+      <td id="days" class="firstHalf">08.00 - 12.00</td>
+      <td class="weekends">Сб, Нд</td>
+    </tr>
+    <tr class="candidate firstHalf weekends">
+      <td class="specialization">Дієтолог</td>
+      <td>Мохинський Степан Віталійович</td>
+      <td class="candidate">Кандидат медичних наук</td>
+      <td>145</td>
+      <td id="days" class="firstHalf">08.00 - 12.00</td>
+      <td class="weekends">Сб, Нд</td>
+    </tr>
+    <tr class="regularDoctor secondHalf weekdays">
+      <td class="specialization">Алерголог</td>
+      <td>Білодід Сергій Олексійович</td>
+      <td class="regularDoctor">Звичайний лікар</td>
+      <td>346</td>
+      <td id="days" class="secondHalf">13.00 - 17.00</td>
+      <td class="weekdays">Пн-Пт</td>
+    </tr>
+    <tr class="regularDoctor firstHalf weekends">
+      <td class="specialization">Гастроентеролог</td>
+      <td>Бойко Петро Іванович</td>
+      <td class="regularDoctor">Звичайний лікар</td>
+      <td>214</td>
+      <td id="days" class="firstHalf">08.00 - 12.00</td>
+      <td class="weekends">Сб, Нд</td>
+    </tr>
+    <tr class="head firstHalf weekends">
+      <td class="specialization">Гінеколог</td>
+      <td>Майко Тамара ОЛексіївна</td>
+      <td class="head">Звичайний лікар</td>
+      <td>125</td>
+      <td id="days" class="firstHalf">08.00 - 12.00</td>
+      <td class="weekends">Сб, Нд</td>
+    </tr>
+    <tr class="candidate firstHalf weekdays">
+      <td class="specialization">Терапевт</td>
+      <td>Кошилець Вікторія олександрівна</td>
+      <td class="candidate">Кандидат медичних наук</td>
+      <td>125</td>
+      <td id="days" class="firstHalf">08.00 - 12.00</td>
+      <td class="weekdays">Пн-Пт</td>
+    </tr>
+    <tr class="head firstHalf weekdays">
+      <td class="specialization">Мамолог</td>
+      <td>Лавріненко Оксана Петрівна</td>
+      <td class="head">Головний лікар</td>
+      <td>123</td>
+      <td id="days" class="firstHalf">08.00 - 12.00</td>
+      <td class="weekdays">Пн-Пт</td>
+    </tr>
+    <tr class="candidate firstHalf weekends">
+      <td class="specialization">Офтальмолог</td>
+      <td>Руденко Ігор Валерійович</td>
+      <td class="candidate">Кандидат медичних наук</td>
+      <td>231</td>
+      <td id="days" class="firstHalf">08.00 - 12.00</td>
+      <td class="weekends">Сб, Нд</td>
+    </tr>
+    <tr class="head secondHalf weekdays">
+    <td class="specialization">Невропатолог</td>
+      <td>Гнатишина Юлія Володдиморівна</td>
+      <td class="head">Головний лікар</td>
+      <td>346</td>
+      <td id="days" class="secondHalf">13.00 - 17.00</td>
+      <td class="weekdays">Пн-Пт</td>
+    </tr>
+    <tr class="candidate firstHalf weekends">
+      <td class="specialization">Отолаинголог</td>
+      <td>Яворська Олга Вікторівна</td>
+      <td class="candidate">Кандидат медичних наук</td>
+      <td>231</td>
+      <td id="days" class="firstHalf">08.00 - 12.00</td>
+      <td class="weekends">Сб, Нд</td>
+    </tr>
+    <tr class="head firstHalf weekdays">
+      <td class="specialization">Педіатр</td>
+      <td>Волошин Оксана Олександрівна</td>
+      <td class="head">Головний лікар</td>
+      <td>123</td>
+      <td id="days" class="firstHalf">08.00 - 12.00</td>
+      <td class="weekdays">Пн-Пт</td>
+    </tr>
+    <tr class="head secondHalf weekdays">
+    <td class="specialization">Невропатолог</td>
+      <td>Гнатишина Юлія Володдиморівна</td>
+      <td class="head">Головний лікар</td>
+      <td>346</td>
+      <td id="days" class="secondHalf">13.00 - 17.00</td>
+      <td class="weekdays">Пн-Пт</td>
+    </tr>
+    <tr class="head firstHalf weekends">
+      <td class="specialization">Гінеколог</td>
+      <td>Майко Тамара ОЛексіївна</td>
+      <td class="head">Звичайний лікар</td>
+      <td>125</td>
+      <td id="days" class="firstHalf">08.00 - 12.00</td>
+      <td class="weekends">Сб, Нд</td>
+    </tr>
+  </table>
+
+  <form>
+  тел: <input type="tel" name="phone" class="phone" required placeholder="+380"><br><br>
+  email: <input type="email" name="email" class="email" required placeholder="alibaba@gmail.com"><br><br>
+  <input class="submitButton" type="submit" value="Надіслати дані на телефон">
+  </form>
+
+
+  <!-- only for search -->
+  <script type="text/javascript">
+    function myFunction() {
+      var input, filter, table, tr, td, i;
+      input = document.getElementById("specialization");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+</script>
+  </script>
+
+</body>
+</html>

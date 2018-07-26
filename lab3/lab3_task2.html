@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>paper</title>
+	<link href="https://fonts.googleapis.com/css?family=Bad+Script|Gothic+A1|Lobster|Shrikhand" rel="stylesheet">
+<style type="text/css">
+	@font-face {
+    font-family: myFirstFont;
+    src: url(Open_Sans/OpenSans-Regular.ttf);
+    }
+
+    q {
+        font-family: 'Lobster', cursive;
+        font-size: 22px;
+    }
+	.wrapper {
+		column-count: 2;
+		max-width: 1060px;
+		width: 100%;
+		margin: 0 auto;
+		column-gap: 40px;
+		font-size: 20px;
+		line-height: 1.3;
+		font-family: 'Gothic A1', sans-serif;
+		word-wrap: break-word;
+		text-align: justify;
+		margin-top: 10px;
+	}
+
+	h2 {
+		column-span: all;
+		text-align: center;
+	}
+
+	.first::first-letter {
+		font-size: 48px;
+		color: #27AE60;
+		text-shadow: 2px 2px 8px #16A085;
+		padding: 5px;
+		border: 1px dashed;
+	}
+
+	.figure1 {
+		column-span: all;
+	}
+
+	.figure1 img {
+		width: 100%;
+	}
+
+	.figure2 img{
+		width: 100%;
+		text-align: center;
+	}
+
+	.figure3 {
+		column-span: all;
+		text-align: center;
+	}
+
+	blockquote:before {
+	    font-size: 4em;
+	    content: "\22";
+	    margin-left: -15%;
+	    font-family: 'Shrikhand', cursive;
+	}
+
+	blockquote p {
+		font-size: 1.8em;
+		margin-top: -15%;
+		margin-left: -8%;
+		width: 75%;
+		text-align: left;
+		font-family: 'Shrikhand', cursive;
+	}
+
+	figcaption {
+		background-color: #EBF5FB;
+		text-align: center;
+	}
+
+	label[for="smaller"] {
+		margin-left: 16%;
+		font-size: 26px;
+	}
+
+	label[for="bigger"] {
+		margin-left: 1%;
+		padding-right: 1%;
+		font-size: 24px;
+		border-right: 1px solid grey;
+	}
+
+    label[for="smaller"]:before {
+	    content: "\002315";
+	    font-size: 48px;
+        }
+
+	label[for="bigger"]:before {
+	    content: "\002315";
+	    font-size: 48px;
+	    }
+
+	#smaller:checked ~ .wrapper{
+	    font-size: 10px;	
+	}
+
+    #bigger:checked ~ .wrapper{
+	    font-size: 30px;	
+	}
+
+	input {
+		display: none;
+	}
+
+	#regular:checked ~ .wrapper{
+	    color: #000;
+	    background-color: #fff;	
+	}
+
+    #oposite:checked ~ .wrapper{
+	    color: #fff;
+	    background-color: #000;		
+	}
+
+
+	label[for="regular"] {
+		padding: 5px;
+	}
+
+	label[for="oposite"] {
+		padding: 5px;
+		border-right: 1px solid grey;
+	}
+
+	label:hover {
+		background-color: #E8F8F5;
+	}
+
+	label {
+		font-size: 20px;
+	}
+
+    #standart:checked ~ .wrapper{
+    	font-family: 'Gothic A1', sans-serif;
+	}
+
+    #coursive:checked ~ .wrapper{
+    	font-family: 'Bad Script', cursive;
+	}
+
+	label[for="standart"] {
+		padding: 5px;
+	}
+
+	label[for="coursive"] {
+		margin-right: 15%;
+		padding: 5px;
+	}
+
+
+</style>
+
+</head>
+<body>
+
+	<input type="checkbox" name="scale" id="smaller">
+    <label for="smaller">-</label>
+    <input type="checkbox" name="scale" id="bigger">
+    <label for="bigger">+</label>
+
+    <input type="radio" name="changeTheme" id="regular" checked>
+    <label for="regular">White Theme</label>
+    <input type="radio" name="changeTheme" id="oposite">
+    <label for="oposite">Black Theme</label>
+
+    <input type="radio" name="changeFont" id="standart" checked>
+    <label for="standart">Standart Font</label>
+    <input type="radio" name="changeFont" id="coursive">
+    <label for="coursive">Cursive Font</label>
+    
+
+	<div class="wrapper">
+		<h2>There is no equivalent word in English, though the concept is simple: sobremesa is the time you spend at the table after you’ve finished eating.</h2>
+		<section class="first">
+			Spain is a country in love with food, renowned for everything from tapas to trailblazing chefs to simple, elegant recipes that have endured for generations. So it may seem counterintuitive, perhaps even heretical, to say that the most important thing about a Spanish lunch is not the food. But it’s true.<br><br>
+
+			Before you spill your gazpacho, let me say that Spanish people don’t take the food part of lunch lightly; far from it. As a Spaniard in love with food in general, and lunch in particular, I for one approach the subject of where to eat with the same level of thought and research that some people put into buying a new car. Of course, I want to know whether the food is good – but I also want to know whether it’s going to be a comfortable place to spend a few hours. Steady yourselves foodies; but in Spain the purpose of going out for lunch isn’t just eating, it’s catching up with friends or family, telling stories and laughing away the stress caused by things that, with a little perspective, you come to realise don’t matter anyway. If all you want is food, you might as well stay at home and order in.
+			<figure class="figure1">
+			  <img src="http://ichef.bbci.co.uk/wwfeatures/wm/live/1600_900/images/live/p0/64/m5/p064m5w6.jpg" alt="going out for lunch in Spain">
+			  <figcaption>In Spain, the purpose of going out for lunch is catching up with friends or family (Credit: Klaus Vedfelt/Getty Images)</figcaption>
+			</figure>
+		</section>
+
+		<section>	
+			Food matters a lot in Spain, but the social aspect of it matters even more. Lunch, for example, doesn’t end when people can’t eat another bite. That’s when the sobremesa starts. There is no equivalent word in English, though the concept is simple: sobremesa is the time you spend at the table after you’ve finished eating. Usually, there’s laughter involved, and almost always the kind of easy, convivial conversation that only the pleasures of a big meal can inspire.
+
+			<aside><blockquote>
+				<p> The sobremesa can be magical </p>
+			</blockquote></aside>
+
+			<q>On a personal level, the sobremesa is fundamental,</q> said Dani Carnero, chef at La Cosmopolita in Málaga, where Spain’s best chefs, including Ferran Adrià, Joan Roca, José Andrés and Andoni Luis Aduriz, go to eat when they’re in town.
+
+			<q>As a chef, when I see people spending time at the table after lunch, I feel that it’s a sign that everything has gone well, but oftentimes people enjoy themselves even more than during the meal itself. The sobremesa can be magical.</q>
+
+			<figure class="figure2">
+			  <img src="http://ichef.bbci.co.uk/wwfeatures/wm/live/1600_900/images/live/p0/64/m6/p064m60v.jpg" alt="Sobremesa">
+			  <figcaption><i>Sobremesa</i> is the time you spend at the table after you’ve finished eating (Credit: Atlantide Phototravel/Getty Images)</figcaption>
+			</figure>
+		</section>
+
+		<section>
+			When I moved to Madrid from Zaragoza, I got in touch with Ben Curtis, a British blogger who has lived in Spain for 20 years and has probably taught more people about Spanish customs than anyone else. We’d been emailing about things related to Spanish culture for some time, but we’d never met, so I suggested we go out for a beer. He wisely suggested we go out for lunch instead. It went so well that we’ve been having lunch more or less once a week for the past six years. And by lunch I don’t mean a sandwich at a food court or a fast-food burger, but a proper sit-down, three-course Spanish lunch. With wine, naturally. If there’s a better way to form a friendship than having long lunches on a regular basis, I’d like to know about it.<br><br>
+
+			In my experience, avant-garde food doesn’t lend itself to a good sobremesa because too much attention gets devoted to the food itself. That’s why I prefer classic, unpretentious casas de comida, or family restaurants, where the food is home-style, made from well-cooked, simple ingredients. I know Ben feels the same way because we have often explored this important subject in leisurely chats after robust meals, the white tablecloth sprinkled with breadcrumbs and splotched with red-wine stains. My informal research suggests that the better the food, the better the sobremesa; but tellingly, you can eat mediocre food and still have a great lunch if you’re with the right company.
+			<figure class="figure2">
+			  <img src="http://ichef.bbci.co.uk/wwfeatures/wm/live/1600_900/images/live/p0/64/m6/p064m6c4.jpg" alt="Sobremesa">
+			  <figcaption>Sobremesa is about prolonging the lunch because you’ve had such a good time you don’t want it to end (Credit: Molly Aaker/Getty Images)</figcaption>
+			</figure>
+		</section>
+
+		<section>
+			There are only a few guidelines to sobremesa. Most important is that nobody gets up from the table - urgent necessities excluded, of course. You have to stay at the table where you ate, amid the post-lunch wreckage of crumpled napkins, stray packets of sugar and the last pieces of dessert that may or may not get eaten. Sobremesa is about prolonging the lunch because you’ve had such a good time that you don’t want it to end; if you leave the table, the spell is broken.
+			<aside><blockquote>
+				<p>If you leave the table, the spell is broken</p>
+			</blockquote></aside>
+			The warm atmosphere of the sobremesa can often lead to conversations that you might not have otherwise, the ones that start like, <q>You’ve inspired me to…</q> or <q>I’ve been wanting to say how much it means to me that you…</q>. But it’s also the natural habitat of the comedian. Jokes never land better than when the listener is well fed and, ideally, a little bit tipsy. All you have to do is say something remotely funny, and even if you mess it up you’ll likely still get a laugh. Actually, especially if you mess it up. My mother has a habit of telling jokes and erupting into infectious, uncontainable laughter long before she gets to the punchline. The jokes aren’t always that funny, but her delivery absolutely kills every time.
+
+			The sobremesa often lasts as long as the meal itself – sometimes, if it’s going well, even longer. I was born in the south of Spain, where the blazing hot summers encourage particularly epic sobremesas. Going outside would be madness, so it’s best to stay put. In my family’s luncheon lore, my favourite story is about a lunch my father once had with a good friend where the sobremesa lasted so long they eventually got hungry again and stayed for dinner. I have yet to achieve the lunch-dinner double, a feat that I like to call the Legendary Enchainment, but one day, one day.
+			<figure class="figure2">
+			  <img src="http://ichef.bbci.co.uk/wwfeatures/wm/live/1600_900/images/live/p0/64/m6/p064m65d.jpg" alt="Dani Carnero: “Oftentimes people enjoy themselves even more than during the meal itself” (Credit: Daniel Hernanz Ramos/Getty Images)">
+			  <figcaption>Dani Carnero: “Oftentimes people enjoy themselves even more than during the meal itself” (Credit: Daniel Hernanz Ramos/Getty Images)</figcaption>
+			</figure>
+
+		</section>
+	</div>
+
+		<caption>&copy;By Mike Randolph<br>
+        25 April 2018</caption>
+</body>
+
+</html>
